@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ news_item[1] }} - UKAZ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='img/main/3b56dc1f8ce1a350421c5d656fe5e726.png') }}" alt="Логотип">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">ГЛАВНАЯ</a></li>
+        <li><a href="{{ url_for('about') }}">О НАС</a></li>
+        <li><a href="{{ url_for('products') }}">ПРОДУКЦИЯ</a></li>
+        <li><a href="{{ url_for('contacts') }}">КОНТАКТЫ</a></li>
+        <li><a href="{{ url_for('certificates') }}">СЕРТИФИКАТЫ</a></li>
+        <li><a href="{{ url_for('job') }}">ВАКАНСИИ</a></li>
+        <li><a href="{{ url_for('news') }}">НОВОСТИ</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switcher">
+      <a href="#">RU</a> | <a href="#">KZ</a> | <a href="#">EN</a>
+    </div>
+  </header>
+  
+  <main>
+    <section class="news-section">
+      <article class="news-item full">
+        <h1>{{ news_item[1] }}</h1>
+        {% if news_item[3] %}
+        <img src="{{ news_item[3] }}" alt="{{ news_item[1] }}">
+        {% endif %}
+        <div class="news-content">
+          {{ news_item[2] | safe }}
+        </div>
+        <p class="news-date">{{ news_item[4]|datetime }}</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="{{ url_for('index') }}">Главная</a></li>
+        <li><a href="{{ url_for('about') }}">О нас</a></li>
+        <li><a href="{{ url_for('products') }}">Продукция</a></li>
+        <li><a href="{{ url_for('contacts') }}">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="contact-info">
+      <p>Контактная информация</p>
+      <p>Головной офис: 070006, Республика Казахстан, г. Усть-Каменогорск, ул. Машиностроителей, 1/7</p>
+      <p>Телефоны:</p>
+      <ul>
+        <li>Приёмная: +7 (7232) 23-11-83</li>
+        <li>Отдел сбыта: +7 (7232) 23-13-16 доб. 121</li>
+        <li>Отдел кадров: +7 (7232) 23-10-62</li>
+        <li>Факс: +7 (7232) 23-10-85</li>
+      </ul>
+      <p>E-mail: <a href="mailto:info@ukaz.kz">info@ukaz.kz</a></p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

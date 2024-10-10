@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас - UKAZ</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/main/3b56dc1f8ce1a350421c5d656fe5e726.png" alt="Логотип">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">ГЛАВНАЯ</a></li>
+        <li><a href="about.html">О НАС</a></li>
+        <li><a href="#">ПРОДУКЦИЯ</a></li>
+        <li><a href="#">КОНТАКТЫ</a></li>
+        <li><a href="#">СЕРТИФИКАТЫ</a></li>
+        <li><a href="job.html">ВАКАНСИИ</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switcher">
+      <a href="#">RU</a> | <a href="#">KZ</a> | <a href="#">EN</a>
+    </div>
+  </header>
+  
+  <main>
+    <section class="about-us">
+      <h1>О НАС</h1>
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="img/aboutus/about1.jpg" alt="Фотография 1">
+        </div>
+        <div class="mySlides fade">
+          <img src="img/aboutus/about2.jpg" alt="Фотография 2">
+        </div>
+        <div class="mySlides fade">
+          <img src="img/aboutus/about3.jpg" alt="Фотография 3">
+        </div>
+        <div class="mySlides fade">
+          <img src="img/aboutus/about4.jpg" alt="Фотография 4">
+        </div>
+      </div>
+      
+      <div class="about-us-text">
+        <div class="text-card">
+          <p>
+            «Усть-Каменогорский арматурный завод» более 40 лет проектирует, разрабатывает, производит и осуществляет поставку трубопроводной арматуры и нефтегазопромыслового оборудования, которые находят широкое применение на нефтегазовых объектах государств СНГ, а также в странах дальнего зарубежья.
+          </p>
+        </div>
+        <div class="text-card">
+          <p>
+            Продукция изготавливается в соответствии со стандартами Республики Казахстан и её качество подтверждено необходимыми разрешениями и сертификатами соответствия. На предприятии внедрена и сертифицирована интегрированная система менеджмента, соответствующая международным стандартам ISO 9001, ISO 14001, ISO 45001.
+          </p>
+        </div>
+        <div class="text-card">
+          <p>
+            «Усть-Каменогорский арматурный завод» является участником проекта «Модернизация производственных мощностей и расширение номенклатуры выпускаемой продукции», который включен в правительственную программу «Дорожная карта бизнеса 2020».
+          </p>
+        </div>
+      </div>
+
+      <div class="indicator-container">
+        <span class="indicator" onclick="currentSlide(1)"></span>
+        <span class="indicator" onclick="currentSlide(2)"></span>
+        <span class="indicator" onclick="currentSlide(3)"></span>
+        <span class="indicator" onclick="currentSlide(4)"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="#">Продукты</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="contact-info">
+      <p>Контактная информация</p>
+      <p>Головной офис: Адрес 070006, Республика Казахстан, г. Усть-Каменогорск, ул. Машиностроителей, 1/7</p>
+      <p>Телефоны: Приёмная +7 (7232) 23-11-83, Отдел сбыта +7 (7232) 23-13-16 доб. 121, Отдел кадров +7 (7232) 23-10-62, Факс +7 (7232) 23-10-85, E-mail: info@ukaz.kz</p>
+    </div>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex - 1].style.display = "block";  
+        setTimeout(showSlides, 3000); // Меняет слайд каждые 3 секунды
+    }
+
+    function currentSlide(n) {
+        slideIndex = n - 1; // Установить индекс текущего слайда
+        showSlidesManually();
+    }
+
+    function showSlidesManually() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex].style.display = "block";  
+    }
+  </script>
+</body>
+</html>
